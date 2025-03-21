@@ -1,0 +1,12 @@
+.footer-wrap {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    width: 100%;
+
+}
+.footer-wrap > p {
+    text-align: center;
+    font-size: 13px;
+    color: gray;
+}
