@@ -35,7 +35,7 @@ public class WebSecurityConfig {
                 .sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests((authz)-> authz
                         .requestMatchers("/", "/api/v1/auth/**", "/file/**").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/board/**", "/api/v1/user/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/movie/**", "/api/v1/user/**").permitAll()
                         .requestMatchers(CorsUtils::isPreFlightRequest).permitAll()
                         .anyRequest().authenticated())
                 .exceptionHandling(e-> e

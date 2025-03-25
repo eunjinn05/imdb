@@ -5,6 +5,7 @@ import com.eunjinn.blog.dto.request.auth.LoginRequestDto;
 import com.eunjinn.blog.dto.response.ResponseDto;
 import com.eunjinn.blog.dto.response.auth.JoinResponseDto;
 import com.eunjinn.blog.dto.response.auth.LoginResponseDto;
+import com.eunjinn.blog.dto.response.user.GetUserInfoResponseDto;
 import com.eunjinn.blog.entity.AuthEntity;
 import com.eunjinn.blog.provider.JwtProvider;
 import com.eunjinn.blog.repository.AuthRepository;
@@ -65,6 +66,18 @@ public class AuthServiceImplement implements AuthService {
             ResponseDto.databaseError();
         }
         return LoginResponseDto.sucess(token);
+    }
 
+    @Override
+    public ResponseEntity<? super GetUserInfoResponseDto> getLoginUser(String email) {
+        AuthEntity authEntity = null;
+        try {
+            authEntity = authRepository.findByMemberEmail(email);
+            if(authEntity == null) return GetUserInfoResponseDto.noExistUser();
+        } catch(Exception e) {
+            e.printStackTrace();
+            return ResponseDto.databaseError();
+        }
+        return GetUserInfoResponseDto.success(authEntity);
     }
 }

@@ -11,12 +11,12 @@ import org.springframework.http.ResponseEntity;
 public class LoginResponseDto extends ResponseDto {
 
     private String token;
-    private int experationTime;
+    private int expirationTime;
 
     public LoginResponseDto(String token) {
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
         this.token = token;
-        this.experationTime = 3600;
+        this.expirationTime = 3600;
     }
 
     public static ResponseEntity<? super LoginResponseDto> sucess (String token) {
