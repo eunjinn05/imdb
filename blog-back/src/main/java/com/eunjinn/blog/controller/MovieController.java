@@ -1,14 +1,13 @@
 package com.eunjinn.blog.controller;
 
+import com.eunjinn.blog.dto.request.movie.MovieUploadRequestDto;
 import com.eunjinn.blog.dto.response.movie.MovieThemeResponseDto;
-import com.eunjinn.blog.repository.MovieRepository;
-import com.eunjinn.blog.repository.MovieThemeRepository;
+import com.eunjinn.blog.dto.response.movie.MovieUploadResponseDto;
 import com.eunjinn.blog.service.MovieService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,4 +21,11 @@ public class MovieController {
         ResponseEntity<? super MovieThemeResponseDto> response = movieService.themeList();
         return response;
     }
+
+    @PostMapping("/upload")
+    public ResponseEntity<? super MovieUploadResponseDto> upload(@RequestBody @Valid MovieUploadRequestDto dto) {
+        ResponseEntity<? super MovieUploadResponseDto> response = movieService.upload(dto);
+        return response;
+    }
+
 }

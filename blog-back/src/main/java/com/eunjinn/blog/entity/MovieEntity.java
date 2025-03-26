@@ -1,5 +1,6 @@
 package com.eunjinn.blog.entity;
 
+import com.eunjinn.blog.dto.request.movie.MovieUploadRequestDto;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -16,4 +17,13 @@ public class MovieEntity {
     private String movieName;
     private String movieImage;
     private String moviePlot;
+    private int movieThemeIdx;
+
+    public MovieEntity(MovieUploadRequestDto dto) {
+        this.movieName = dto.getMovieName();
+        this.movieImage = dto.getMovieImage();
+        this.moviePlot = dto.getMoviePlot();
+        this.movieThemeIdx = dto.getMovieThemeIdx();
+    }
+
 }

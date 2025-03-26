@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface MovieThemeRepository extends JpaRepository<MovieThemeEntity, Integer> {
-    List<MovieThemeEntity> findByOrderByThemeIdxDesc();
+    List<MovieThemeEntity> findByOrderByThemeIdxAsc();
 }
