@@ -17,7 +17,7 @@ const InputBox = forwardRef<HTMLInputElement, Prop>((props: Prop, ref) => {
     return (
         <>
             <div className="input-box-wrap">
-                <input className="input-box" type={type} placeholder={placeholder} value={value} onChange={onChange} onKeyDown={onKeyDown} />
+                <input className="input-box" type={type} placeholder={placeholder} value={value} onChange={onChange} onKeyDown={onKeyDown} ref={ref} />
                 {error && ( <div className="input-error-message"><p>{errorMessage}</p></div> )}
            </div>
         </>

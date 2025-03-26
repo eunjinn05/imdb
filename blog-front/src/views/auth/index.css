@@ -48,6 +48,7 @@
     display: block;
     margin: 20px auto 20px auto;
     cursor: pointer;
+    font-weight: bold;
 }
 
 .join-go-to-login > span {
@@ -56,5 +57,16 @@
     display: block;
     width: 40px;
     cursor: pointer;
+    font-weight: bold;
 }
 
+/** --------------------------------------------------------------------------------- */
+
+.login-go-to-join > span {
+    color: black;
+    margin: 20px auto;
+    display: block;
+    width: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}

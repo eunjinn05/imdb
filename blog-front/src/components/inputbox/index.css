@@ -1,5 +1,12 @@
+.input-box-wrap {
+    margin-bottom: 10px;
+}
 .input-box {
     width: 300px;
     padding: 12px;
-    margin-bottom: 15px;
+}
+
+.input-error-message > p {
+    color: darkred;
+    font-size: 12px;
 }
